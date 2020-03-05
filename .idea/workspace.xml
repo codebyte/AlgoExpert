@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d94e8ce4-7b76-4073-8fe5-774ca845640a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/algo/bst/BST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/algo/arrays/TwoNumberSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/algo/arrays/TwoNumberSum.java" afterDir="false" />
-    </list>
+    <list default="true" id="d94e8ce4-7b76-4073-8fe5-774ca845640a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/algo/bst/BST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+            <state relative-caret-position="222">
+              <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
               <folding>
                 <element signature="e#331#332#0" expanded="true" />
                 <element signature="e#356#357#0" expanded="true" />
@@ -227,7 +223,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583140787954</updated>
       <workItem from="1583140789813" duration="6937000" />
-      <workItem from="1583431305596" duration="1417000" />
+      <workItem from="1583431305596" duration="1718000" />
     </task>
     <task id="LOCAL-00001" summary="create individual packages,">
       <created>1583424345368</created>
@@ -236,17 +232,24 @@
       <option name="project" value="LOCAL" />
       <updated>1583424345368</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="bst tree (insert, search, traversal/search)&#10;&#10;yet to add delete functionality">
+      <created>1583433023788</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583433023788</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8354000" />
+    <option name="totallyTimeSpent" value="8655000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20949903" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20949903" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -257,14 +260,14 @@
       <window_info id="Learn" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49446973" visible="true" weight="0.32948717" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49186727" visible="true" weight="0.32948717" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50553024" side_tool="true" visible="true" weight="0.32948717" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50813276" side_tool="true" visible="true" weight="0.32948717" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49967468" weight="0.32948717" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
@@ -286,7 +289,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create individual packages," />
-    <option name="LAST_COMMIT_MESSAGE" value="create individual packages," />
+    <MESSAGE value="bst tree (insert, search, traversal/search)&#10;&#10;yet to add delete functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="bst tree (insert, search, traversal/search)&#10;&#10;yet to add delete functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -335,8 +339,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/algo/bst/BST.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+        <state relative-caret-position="222">
+          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
           <folding>
             <element signature="e#331#332#0" expanded="true" />
             <element signature="e#356#357#0" expanded="true" />
