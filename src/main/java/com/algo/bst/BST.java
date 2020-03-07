@@ -19,6 +19,12 @@ interface Tree {
     public void delete(int value);
 
     public Node search(int value);
+
+    public void preOrder();
+
+    public void postOrder();
+
+    public void inOrder();
 }
 
 class BST implements Tree {
@@ -71,6 +77,51 @@ class BST implements Tree {
         return search(root, value);
     }
 
+    public void preOrder() {
+       preOrder(root);
+    }
+
+    public void postOrder() {
+       postOrder(root);
+    }
+
+    public void inOrder() {
+        postOrder(root);
+    }
+
+    public Node preOrder(Node node) {
+        if(node == null)
+            return null;
+
+       System.out.println(node.value);
+       preOrder(node.left);
+       preOrder(node.right);
+
+        return node;
+    }
+
+    public Node postOrder(Node node) {
+        if(node == null)
+            return null;
+
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println(node.value);
+
+        return node;
+    }
+
+    public Node inOrder(Node node) {
+        if(node == null)
+            return null;
+
+        inOrder(node.left);
+        System.out.println(node.value);
+        inOrder(node.right);
+
+        return node;
+    }
+
     private Node search(Node node, int value) {
 
         if (node == null) {
@@ -108,5 +159,18 @@ class BST implements Tree {
         } else {
             System.out.println("Not Found");
         }
+
+
+        System.out.println("PreOrder");
+        bst.preOrder();
+
+        System.out.println("InOrder");
+        bst.inOrder();
+
+        System.out.println("postOrder");
+        bst.postOrder();
+
+
+
     }
 }
