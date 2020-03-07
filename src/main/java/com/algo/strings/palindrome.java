@@ -22,7 +22,6 @@ public class palindrome {
         return isPalindrome;
     }
 
-
     public static void main(String args[]) {
 
         String s = "SUJJUS";
