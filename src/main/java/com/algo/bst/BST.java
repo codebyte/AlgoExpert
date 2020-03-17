@@ -1,5 +1,8 @@
 package com.algo.bst;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class Node {
     int value;
     Node left;
@@ -25,6 +28,11 @@ interface Tree {
     public void postOrder();
 
     public void inOrder();
+
+    public void branchSum();
+
+    public void invert();
+
 }
 
 class BST implements Tree {
@@ -78,30 +86,64 @@ class BST implements Tree {
     }
 
     public void preOrder() {
-       preOrder(root);
+        preOrder(root);
     }
 
     public void postOrder() {
-       postOrder(root);
-    }
-
-    public void inOrder() {
         postOrder(root);
     }
 
+    public void inOrder() {
+        inOrder(root);
+    }
+
+    public Node calculateSum(Node node, int currSum, List<Integer> sumList) {
+
+        if (node == null) {
+            return null;
+        }
+
+        currSum = currSum + node.value;
+
+        if ((node.left == null) && (node.right == null)) {
+            sumList.add(currSum);
+            return node;
+        }
+
+        calculateSum(node.left, currSum, sumList);
+        calculateSum(node.right, currSum, sumList);
+
+        return node;
+    }
+
+
+    public void branchSum() {
+        List<Integer> sumList = new ArrayList<Integer>();
+        calculateSum(root, 0, sumList);
+
+        System.out.println(sumList.toString());
+
+    }
+
+    @Override
+    public void invert() {
+        invert(root);
+    }
+
+
     public Node preOrder(Node node) {
-        if(node == null)
+        if (node == null)
             return null;
 
-       System.out.println(node.value);
-       preOrder(node.left);
-       preOrder(node.right);
+        System.out.println(node.value);
+        preOrder(node.left);
+        preOrder(node.right);
 
         return node;
     }
 
     public Node postOrder(Node node) {
-        if(node == null)
+        if (node == null)
             return null;
 
         postOrder(node.left);
@@ -112,12 +154,28 @@ class BST implements Tree {
     }
 
     public Node inOrder(Node node) {
-        if(node == null)
+        if (node == null)
             return null;
 
         inOrder(node.left);
         System.out.println(node.value);
         inOrder(node.right);
+
+        return node;
+    }
+
+    public Node invert(Node node) {
+
+        if(node == null)
+            return null;
+
+        invert(node.left);
+        invert(node.right);
+
+        Node temp = null;
+        temp = node.left;
+        node.left = node.right;
+        node.right = temp;
 
         return node;
     }
@@ -148,7 +206,10 @@ class BST implements Tree {
     public static void main(String args[]) {
         BST bst = new BST();
         bst.insert(390);
+        bst.insert(395);
         bst.insert(50);
+        bst.insert(45);
+        bst.insert(70);
         bst.insert(400);
         bst.insert(2000);
 
@@ -170,7 +231,12 @@ class BST implements Tree {
         System.out.println("postOrder");
         bst.postOrder();
 
+        bst.branchSum();
 
+        bst.invert();
+
+        System.out.println("After Invert");
+        bst.inOrder();
 
     }
 }
