@@ -1,5 +1,7 @@
 package com.geekforgeeks.arrays;
 
+// Kadane's Algorithm
+
 public class MaxSubArray {
 
     public static int maxSum(int x, int bubbleSum) {
