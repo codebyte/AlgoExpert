@@ -20,7 +20,7 @@ public class LeadersInArray {
 
     public static void main(String args[]) {
 
-        int a[] = {10, 5, 12, 19, 10, 6, 9};
+        int a[] = {7, 10, 4, 10, 6, 5, 2};
 
         leaders(a);
 
