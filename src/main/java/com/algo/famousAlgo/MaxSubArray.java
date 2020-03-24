@@ -1,4 +1,4 @@
-package com.algo.famousPackage;
+package com.algo.famousAlgo;
 
 public class MaxSubArray {
 
