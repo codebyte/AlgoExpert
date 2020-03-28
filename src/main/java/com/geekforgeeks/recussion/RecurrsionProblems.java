@@ -44,6 +44,16 @@ public class RecurrsionProblems {
         return palindrome(arr, index + 1, length - 1);
     }
 
+    public static int digitSum(int num, int val) {
+
+        int rem = num % 10;
+
+        if (rem == 0) {
+            return num + val;
+        }
+        return digitSum(num / 10, rem + val);
+    }
+
     public static void main(String args[]) {
 
         System.out.println("PrintNTo1");
@@ -60,6 +70,9 @@ public class RecurrsionProblems {
         String arr = "aabaa";
 
         System.out.println(palindrome(arr.toCharArray(), 0, arr.length() - 1));
+
+        System.out.println("Digit Sum");
+        System.out.println(digitSum(253, 0));
 
 
     }
