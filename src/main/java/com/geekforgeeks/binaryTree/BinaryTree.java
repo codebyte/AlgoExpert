@@ -73,20 +73,20 @@ public class BinaryTree implements TreeOps {
     @Override
     public void delete(int ele) {
 
-        Node node = findElementToDelete(root, ele);
+        Node node = delete(root, ele);
 
     }
 
-    public Node findElementToDelete(Node node, int ele) {
+    public Node delete(Node node, int ele) {
 
         if (node == null) {
             return null;
         }
 
         if (ele < node.ele) {
-            node.left = findElementToDelete(node.left, ele);
+            node.left = delete(node.left, ele);
         } else if (ele > node.ele) {
-            node.right = findElementToDelete(node.right, ele);
+            node.right = delete(node.right, ele);
         } else {
 
             if (node.left == null) {
@@ -101,7 +101,7 @@ public class BinaryTree implements TreeOps {
             Node succ = getSucc(node);
             System.out.println("Succee" + succ.ele);
             node.ele = succ.ele;
-            node.right = findElementToDelete(node.right, succ.ele);
+            node.right = delete(node.right, succ.ele);
         }
 
         return node;
