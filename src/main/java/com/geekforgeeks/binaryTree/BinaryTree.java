@@ -23,6 +23,8 @@ interface TreeOps {
 
     public void delete(int ele);
 
+    public void floor(int ele);
+
 }
 
 
@@ -75,6 +77,37 @@ public class BinaryTree implements TreeOps {
 
         Node node = delete(root, ele);
 
+    }
+
+    @Override
+    public void floor(int ele) {
+        floor(root, ele);
+    }
+
+    public Node floor(Node node, int ele) {
+
+
+        if (node == null) {
+            return null;
+        }
+
+        if (ele == node.ele) {
+            System.out.println("Found : " + node.ele);
+            return node;
+        }
+
+        if (ele < node.ele) {
+            node.left = floor(node.left, ele);
+        } else if (ele > node.ele) {
+            node.right = floor(node.right, ele);
+        }
+
+        if (node.left == null) {
+            if (node.ele < ele) {
+                System.out.println(" Found " + node.ele);
+            }
+        }
+        return node;
     }
 
     public Node delete(Node node, int ele) {
@@ -264,10 +297,12 @@ public class BinaryTree implements TreeOps {
         tree.insert(50);
         tree.insert(30);
         tree.insert(70);
-        tree.insert(10);
+        tree.insert(20);
         tree.insert(40);
         tree.insert(60);
         tree.insert(80);
+        tree.insert(55);
+        tree.insert(65);
 
         System.out.println("PreOrder");
         tree.preOrder();
@@ -295,6 +330,8 @@ public class BinaryTree implements TreeOps {
         tree.delete(70);
 
         tree.inOrder();
+
+        tree.floor(25);
 
     }
 }
