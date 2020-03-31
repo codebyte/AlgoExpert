@@ -2,27 +2,11 @@ package com.geekforgeeks.graph;
 
 import java.util.*;
 
-interface Graph {
-
-    enum GraphType {
-        DIRECTED,
-        UNDIRECTED
-    }
-
-    public void addEdge(int v1, int v2);
-
-    public void display();
-
-    public void bfsCrawl();
-
-}
-
 public class AdjacenyList implements Graph {
 
     HashMap<Integer, ArrayList<Integer>> adj = new HashMap<>();
     GraphType graphType = GraphType.DIRECTED;
-
-    final int v = 10;
+    final int nVertices = 10;
 
     AdjacenyList(GraphType graphType) {
         this.graphType = graphType;
@@ -30,17 +14,16 @@ public class AdjacenyList implements Graph {
 
     @Override
     public int hashCode() {
-        return Objects.hash(adj, graphType, v);
+        return Objects.hash(adj, graphType, nVertices);
     }
 
     @Override
     public void addEdge(int v1, int v2) {
 
-        if ((v1 < 0 || v1 > v) || (v2 < 0 || v2 > v)) {
+        if ((v1 < 0 || v1 > nVertices) || (v2 < 0 || v2 > nVertices)) {
             System.out.println("Invalid");
         }
 
-        System.out.println(" ===> " + adj.containsKey(v1));
         if (!adj.containsKey(v1)) {
             adj.put(v1, new ArrayList<>());
         }
@@ -57,7 +40,6 @@ public class AdjacenyList implements Graph {
                 adj.get(v2).add(v1);
             }
         }
-
     }
 
     @Override
@@ -83,21 +65,21 @@ public class AdjacenyList implements Graph {
     }
 
     @Override
-    public void bfsCrawl() {
+    public void bfs() {
         boolean[] visited = new boolean[adj.size()];
         Queue<Integer> q = new LinkedList<>();
 
         for (int i = 0; i < adj.size(); i++) {
             if (adj.containsKey(i)) {
                 addToQueue(i, q);
-                bfs(q, visited);
+                bfsEachAdjList(q, visited);
             }
             System.out.println();
         }
 
     }
 
-    public void bfs(Queue<Integer> q, boolean[] visited) {
+    public void bfsEachAdjList(Queue<Integer> q, boolean[] visited) {
 
         while (!q.isEmpty()) {
             int ele = q.poll();
@@ -112,24 +94,46 @@ public class AdjacenyList implements Graph {
 
     }
 
+    public void dfsRec(HashMap<Integer, ArrayList<Integer>> adj, int v, boolean[] visited) {
+
+        visited[v] = true;
+
+        System.out.print(" " + v + " ");
+
+        if (!adj.containsKey(v)) {
+            return;
+        }
+
+        for (int ele : adj.get(v)) {
+            if (!visited[ele]) {
+                dfsRec(adj, ele, visited);
+            }
+        }
+    }
+
+    @Override
+    public int dfs() {
+
+        boolean[] visited = new boolean[adj.size()];
+        int count = 0;
+
+        for (int i = 0; i < visited.length; i++) {
+            visited[i] = false;
+        }
+
+        System.out.println(" DFS => : ");
+
+        for (int i = 0; i < adj.size(); i++) {
+            if (!visited[i]) {
+                dfsRec(adj, i, visited);
+                count++;
+                System.out.println();
+            }
+        }
+        return count;
+    }
+
     public static void main(String args[]) {
-        Graph g = new AdjacenyList(GraphType.UNDIRECTED);
-
-        g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(1, 0);
-        g.addEdge(1, 2);
-        g.addEdge(2, 0);
-        g.addEdge(2, 1);
-        g.addEdge(3, 4);
-        g.addEdge(5, 6);
-        g.addEdge(5, 7);
-        g.addEdge(7, 8);
-
-
-        g.display();
-
-        g.bfsCrawl();
 
     }
 }
